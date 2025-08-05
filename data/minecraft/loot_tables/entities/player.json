@@ -1,0 +1,39 @@
+{
+    "type": "minecraft:entity",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:player_head",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_skull_owner",
+                            "entity": "this"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "condition": "minecraft:killed_by_player"
+                        },
+                        {
+                            "condition": "minecraft:entity_properties",
+                            "entity": "killer",
+                            "predicate": {
+                                "vehicle": {
+                                    "type": "minecraft:horse"
+                                },
+                                "equipment": {
+                                    "mainhand": {
+                                        "item": "minecraft:iron_axe"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
